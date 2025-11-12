@@ -6,32 +6,37 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 10:57:07 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/12 12:01:55 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/12 20:35:58 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_puthexa(unsigned int nb, int x)
+int	ft_puthexa(unsigned int nb, int x)
 {
-	int arr[2];
-	int len;
+	int arr[16];
+	int i;
+	int count;
 
-	len = 2;
+	count = 0;
+	i = 0;
+	if (nb == 0)
+		count += ft_putchar('0');
 	char base[16] = "0123456789abcdef";
 	char base1[16] = "0123456789ABCDEF";
-	if (nb >= 16)
+	while (nb > 0)
 	{
-		len--;
-		if (x == 7)
-			arr[len] = base1[nb % 16];
-		if (x == 8)
-			arr[len] = base[nb % 16];
+		if (x == 6)
+			arr[i] = base[nb % 16];
+		else if (x == 7)
+			arr[i] = base1[nb % 16];
 		nb = nb / 16;
+		i++;
 	}
-	while (len < 2)
+	while (i > 0)
 	{
-		ft_putchar(arr[len]);
-		len++;
+		i--;
+		count += ft_putchar(arr[i]);
 	}
+	return (count);
 }

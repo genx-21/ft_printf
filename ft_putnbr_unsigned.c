@@ -6,21 +6,23 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 12:13:08 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/12 12:15:36 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/12 19:57:48 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void putnbr_unsigned(unsigned int n)
+int ft_putnbr_unsigned(unsigned int n)
 {
     char	arr[10];
 	int		i;
+	int count;
 
+	count = 0;
     if (n == 0)
     {
         ft_putchar('0');
-        return ;
+        return (1);
     }
 	i = 0;
 	while (n > 0)
@@ -32,6 +34,7 @@ void putnbr_unsigned(unsigned int n)
 	while (i > 0)
 	{
 		i--;
-		ft_putchar(arr[i]);
-	} 
+		count += ft_putchar(arr[i]);
+	}
+	return (count);
 }

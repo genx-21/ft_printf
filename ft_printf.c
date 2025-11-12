@@ -6,13 +6,13 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:03:16 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/12 12:57:20 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/12 20:11:01 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int print_data(int n, va_list *star)
+static int print_data(int n, va_list *star)
 {
 	int nprint;
 
@@ -28,15 +28,15 @@ int print_data(int n, va_list *star)
 	else if(n == 5)
 		nprint = ft_putnbr_unsigned(va_arg(*star, unsigned int));
 	else if (n == 6)
-		nprint = ft_puthexa(va_arg(*star, unsigned int), 7);
+		nprint = ft_puthexa(va_arg(*star, unsigned int), 6);
 	else if (n == 7)
-		nprint = ft_puthexa(va_arg(*star, unsigned int), 8);
+		nprint = ft_puthexa(va_arg(*star, unsigned int), 7);
 	else if (n == 8)
 		nprint = ft_putchar('%');
 	return (nprint);
 }
 
-int check_form(const char *format)
+static int check_form(const char *format)
 {
 	int i;
 
