@@ -6,13 +6,13 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:22:08 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/11 13:34:32 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/12 13:01:19 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_putstr(char *str)
+int	ft_putstr(char *str)
 {
 	int i;
 
@@ -22,4 +22,5 @@ void	ft_putstr(char *str)
 		ft_putchar(str[i]);
 		i++;
 	}
+	return i;
 }

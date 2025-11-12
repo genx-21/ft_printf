@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puchar.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sasaidi <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:20:42 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/11 13:21:51 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/12 13:02:03 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.a"
+#include "libftprintf.h"
 
-void	ft_putchar(char c)
+int 	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }
