@@ -12,9 +12,9 @@
 
 #include "libftprintf.h"
 
-static int print_data(int n, va_list *star)
+static int	print_data(int n, va_list *star)
 {
-	int nprint;
+	int	nprint;
 
 	nprint = 0;
 	if (n == 0)
@@ -25,7 +25,7 @@ static int print_data(int n, va_list *star)
 		nprint = ft_putadress(va_arg(*star, void *));
 	else if (n == 3 || n == 4)
 		nprint = ft_putnbr(va_arg(*star, int));
-	else if(n == 5)
+	else if (n == 5)
 		nprint = ft_putnbr_unsigned(va_arg(*star, unsigned int));
 	else if (n == 6)
 		nprint = ft_puthexa(va_arg(*star, unsigned int), 6);
@@ -36,9 +36,9 @@ static int print_data(int n, va_list *star)
 	return (nprint);
 }
 
-static int check_form(const char *format)
+static int	check_form(const char *format)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (format[i + 1] == 'c')
@@ -63,16 +63,16 @@ static int check_form(const char *format)
 		return (-1);
 }
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	int i;
-	int n;
-	int count;
-	
+	int		i;
+	int		n;
+	int		count;
+	va_list	star;
+
 	count = 0;
 	i = 0;
-	va_list	star;
-	va_start (star, format);
+	va_start(star, format);
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -81,11 +81,11 @@ int ft_printf(const char *format, ...)
 			if (n == -1)
 				return (-1);
 			count += print_data(n, &star);
-			i +=2;
+			i += 2;
 		}
 		else
 			count += ft_putchar(format[i++]);
 	}
-	va_end (star);
+	va_end(star);
 	return (count);
 }

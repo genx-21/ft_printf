@@ -30,10 +30,11 @@ static long int	negativ(long int n, int *count)
 
 int	ft_putnbr(int n)
 {
-	char	arr[10];
-	int		i;
-	long int nb;
-	int count;
+	char		arr[10];
+	int			i;
+	long int	nb;
+	int			count;
+
 	nb = n;
 	count = 0;
 	if (nb <= 0)

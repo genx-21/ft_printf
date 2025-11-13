@@ -14,7 +14,7 @@
 
 int	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -22,5 +22,5 @@ int	ft_putstr(char *str)
 		ft_putchar(str[i]);
 		i++;
 	}
-	return i;
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 12:18:17 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/12 22:19:27 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/12 22:35:23 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,43 +14,41 @@
 
 int main(void)
 {
-    int count;
+    int ft_ret, std_ret;
+    char c = 'A';
+    char *str = "Salah";
+    void *ptr = &c;
+    int d = -2147483648;
+    unsigned int u = 42;
+    int x = 255;
 
-    printf("=== ft_printf helper test ===\n\n");
+    // Test all basic conversions
+    ft_ret = ft_printf("ft_printf Test:\n");
+    ft_ret += ft_printf("Char: %c\n", c);
+    ft_ret += ft_printf("String: %s\n", str);
+    ft_ret += ft_printf("Pointer: %p\n", ptr);
+    ft_ret += ft_printf("Decimal: %d\n", d);
+    ft_ret += ft_printf("Integer: %i\n", d);
+    ft_ret += ft_printf("Unsigned: %u\n", u);
+    ft_ret += ft_printf("Hex lowercase: %x\n", x);
+    ft_ret += ft_printf("Hex uppercase: %X\n", x);
+    ft_ret += ft_printf("Percent: %%\n");
 
-    // 1️⃣ ft_putchar
-    count = ft_putchar('A');
-    printf("\nft_putchar('A') returned: %d (should be 1)\n\n", count);
+    printf("\nft_printf returned total chars: %d\n\n", ft_ret);
 
-    // 2️⃣ ft_putstr
-    count = ft_putstr("Salah");
-    printf("\nft_putstr(\"Salah\") returned: %d (should be 5)\n\n", count);
+    // Compare with standard printf
+    std_ret = printf("printf Test:\n");
+    std_ret += printf("Char: %c\n", c);
+    std_ret += printf("String: %s\n", str);
+    std_ret += printf("Pointer: %p\n", ptr);
+    std_ret += printf("Decimal: %d\n", d);
+    std_ret += printf("Integer: %i\n", d);
+    std_ret += printf("Unsigned: %u\n", u);
+    std_ret += printf("Hex lowercase: %x\n", x);
+    std_ret += printf("Hex uppercase: %X\n", x);
+    std_ret += printf("Percent: %%\n");
 
-    // 3️⃣ ft_putnbr (negative)
-    count = ft_putnbr(-42);
-    printf("\nft_putnbr(-42) returned: %d (should be 3: '-' + '4' + '2')\n\n", count);
-
-    // 4️⃣ ft_putnbr (positive)
-    count = ft_putnbr(12345);
-    printf("\nft_putnbr(12345) returned: %d (should be 5)\n\n", count);
-
-    // 5️⃣ ft_putnbr_unsigned
-    count = ft_putnbr_unsigned(4294967295U);
-    printf("\nft_putnbr_unsigned(4294967295U) returned: %d (should be 10)\n\n", count);
-
-    // 6️⃣ ft_puthexa (lowercase)
-    count = ft_puthexa(255, 6);
-    printf("\nft_puthexa(255, 6) returned: %d (should be 2: 'f' + 'f')\n\n", count);
-
-    // 7️⃣ ft_puthexa (uppercase)
-    count = ft_puthexa(255, 7);
-    printf("\nft_puthexa(255, 7) returned: %d (should be 2: 'F' + 'F')\n\n", count);
-
-    // 8️⃣ ft_putadress
-    int x = 0;
-    count = ft_putadress(&x);
-    printf("\nft_putadress(&x) returned: %d (should be 14–18 depending on your system)\n\n", count);
+    printf("\nprintf returned total chars: %d\n", std_ret);
 
     return 0;
 }
-

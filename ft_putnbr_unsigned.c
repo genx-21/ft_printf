@@ -12,18 +12,18 @@
 
 #include "libftprintf.h"
 
-int ft_putnbr_unsigned(unsigned int n)
+int	ft_putnbr_unsigned(unsigned int n)
 {
-    char	arr[10];
+	char	arr[10];
 	int		i;
-	int count;
+	int		count;
 
 	count = 0;
-    if (n == 0)
-    {
-        ft_putchar('0');
-        return (1);
-    }
+	if (n == 0)
+	{
+		ft_putchar('0');
+		return (1);
+	}
 	i = 0;
 	while (n > 0)
 	{
