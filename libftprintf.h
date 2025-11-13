@@ -6,7 +6,7 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:10:33 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/12 22:15:40 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/13 21:43:06 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_PRINTF_H
 
 # include <stdarg.h>
-# include <stdio.h>
 # include <unistd.h>
 
 int	ft_printf(const char *formata, ...);
@@ -24,6 +23,6 @@ int	ft_putadress(void *ptr);
 int	ft_putnbr(int n);
 int	ft_putnbr_unsigned(unsigned int n);
 int	ft_puthexa(unsigned int nb, int x);
-int	ft_puthexa_long(unsigned long long nb);
+int	ft_puthexa_long(unsigned long nb);
 
 #endif

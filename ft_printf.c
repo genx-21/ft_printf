@@ -6,7 +6,7 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:03:16 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/12 20:11:01 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/13 21:54:32 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,21 +43,21 @@ static int	check_form(const char *format)
 	i = 0;
 	if (format[i + 1] == 'c')
 		return (0);
-	if (format[i + 1] == 's')
+	else if (format[i + 1] == 's')
 		return (1);
-	if (format[i + 1] == 'p')
+	else if (format[i + 1] == 'p')
 		return (2);
-	if (format[i + 1] == 'd')
+	else if (format[i + 1] == 'd')
 		return (3);
-	if (format[i + 1] == 'i')
+	else if (format[i + 1] == 'i')
 		return (4);
-	if (format[i + 1] == 'u')
+	else if (format[i + 1] == 'u')
 		return (5);
-	if (format[i + 1] == 'x')
+	else if (format[i + 1] == 'x')
 		return (6);
-	if (format[i + 1] == 'X')
+	else if (format[i + 1] == 'X')
 		return (7);
-	if (format[i + 1] == '%')
+	else if (format[i + 1] == '%')
 		return (8);
 	else
 		return (-1);

@@ -6,7 +6,7 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:22:08 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/12 13:01:19 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/13 22:01:49 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_putstr(char *str)
 	int	i;
 
 	i = 0;
+	if (!str)
+		return (ft_putstr("(null)"));
 	while (str[i])
 	{
 		ft_putchar(str[i]);
