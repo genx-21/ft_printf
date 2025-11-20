@@ -6,7 +6,7 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 11:51:56 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/13 21:42:51 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/19 22:12:38 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@ int	ft_putadress(void *ptr)
 
 	count = 0;
 	adress = (unsigned long)ptr;
-	count += ft_putstr("0x");
 	if (adress == 0)
-		count += ft_putchar('0');
-	else
-		count += ft_puthexa_long(adress);
+		return (ft_putstr("(nil)"));
+	count += ft_putstr("0x");
+	count += ft_puthexa_long(adress);
 	return (count);
 }

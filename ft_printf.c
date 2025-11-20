@@ -6,7 +6,7 @@
 /*   By: sasaidi <sasaidi@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:03:16 by sasaidi           #+#    #+#             */
-/*   Updated: 2025/11/13 21:54:32 by sasaidi          ###   ########.fr       */
+/*   Updated: 2025/11/19 22:19:39 by sasaidi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,11 +68,11 @@ int	ft_printf(const char *format, ...)
 	int		i;
 	int		n;
 	int		count;
-	va_list	star;
+	va_list	test;
 
 	count = 0;
 	i = 0;
-	va_start(star, format);
+	va_start(test, format);
 	while (format[i])
 	{
 		if (format[i] == '%')
@@ -80,12 +80,12 @@ int	ft_printf(const char *format, ...)
 			n = check_form(&format[i]);
 			if (n == -1)
 				return (-1);
-			count += print_data(n, &star);
+			count += print_data(n, &test);
 			i += 2;
 		}
 		else
 			count += ft_putchar(format[i++]);
 	}
-	va_end(star);
+	va_end(test);
 	return (count);
 }
